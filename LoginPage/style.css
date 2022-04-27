@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap');
+
+/* Link Imagem: 
+https://images.unsplash.com/photo-1485601284679-a2f86e6f7dea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
+ */
+
+* {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: 'Cormorant Garamond', serif;
+}
+
+body {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       min-height: 100vh;
+       background: #23282b;
+       color: #fff;
+}
+
+img {
+       display: block;
+       max-width: 100%;
+}
+
+.container {
+       max-height: 90vh;
+       width: 90%;
+       background: #00000080;
+       display: flex;
+}
+
+.form {
+       overflow: hidden;
+       width: 50%;
+}
+
+.form .entrar {
+       position: relative;
+       top: 0;
+       left: 0;
+       min-height: 90vh;
+       transition: all .5s linear;
+}
+
+.entrar .button {
+       position: absolute;
+       transform: translate(-50%, -50%);
+       margin-left: 50%;
+       margin-top: 80px;
+}
+
+.form .criar-conta {
+       position: relative;
+       top: 0;
+       left: 0;
+       min-height: 90vh;
+       transition: all .5s linear;
+}
+
+.criar-conta .button {
+       position: relative;
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin-top: 32px;
+}
+
+.button button {
+       cursor: pointer;
+       border: none;
+       outline: none;
+       padding: 8px 40px;
+       border-radius: 32px;
+       background: linear-gradient(140deg, #062a38, #a3867a);
+       color: #fff;
+       font-size: 1.2em;
+       transition: all .3s linear;
+}
+
+button:hover {
+       transform: scale(1.1);
+}
+
+.form-header {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: flex-start;
+       align-items: center;
+       position: relative;
+       padding: 8px;
+}
+
+.form-title {
+       font-size: 2em;
+       position: relative;
+}
+
+.form-title::after {
+       content: '';
+       position: absolute;
+       bottom: -8px;
+       width: 80%;
+       height: 3px;
+       background: #a3867a;
+}
+
+.header-buttons {
+       width: 100%;
+       margin-top: 24px;
+       display: flex;
+       flex-wrap: wrap;
+       align-items: center;
+       justify-content: space-between;
+       gap: 10px 0;
+}
+
+.header-buttons button {
+       position: relative;
+       width: 150px;
+       height: 32px;
+       border: none;
+       outline: none;
+       background: transparent;
+       border-radius: 32px;
+       color: #fff;
+       font-size: 1.2em;
+       cursor: pointer;
+       pointer-events: none;
+}
+
+.header-buttons .button-bg {
+       cursor: pointer;
+       background: linear-gradient(140deg, #062a38, #a3867a);
+       width: 150px;
+       height: 32px;
+       border-radius: 32px;
+       transition: all .3s;
+}
+
+.header-buttons .button-bg:nth-child(2) {
+       background: linear-gradient(140deg, #a3867a, #062a38)
+}
+
+.header-buttons .button-bg:hover {
+       transform: scale(1.1);
+}
+
+.form-img {
+       background: url(1.jpg);
+       background-size: cover;
+       width: 50%;
+       height: 100%;
+       min-height: 90vh;
+}
+
+.input-group {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       width: 100%;
+       padding: 8px;
+       gap: 0px 24px;
+       flex: 1 1 260px;
+}
+
+.input {
+       display: flex;
+       flex-direction: column;
+       flex: 1 1 260px;
+       margin-top: 24px;
+}
+
+.input input {
+       padding: 8px;
+       outline: none;
+       border: none;
+       font-size: 1.1em;
+}
+
+.input label {
+       margin-bottom: 8px;
+}
+
+.input-generos {
+       position: relative;
+       width: 100%;
+       display: flex;
+       justify-content: space-between;
+       margin-top: 24px;
+}
+
+.input-generos span {
+       position: absolute;
+       font-size: 1.3em;
+}
+
+.input-generos .genero {
+       margin: 32px 0px;
+}
+
+/* blur BG */
+.blur {
+       position: absolute;
+       width: 250px;
+       height: 250px;
+       background: #a3867a;
+       border-radius: 50%;
+       filter: blur(50px);
+       z-index: -2;
+       animation: move 4s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+       0% {
+              transform: translateX(400px) translateY(-120px);
+       }
+
+       50% {
+              transform: translateX(-20px) translateY(0px);
+       }
+
+       100% {
+              transform: translateX(0px) translateY(200px);
+       }
+}
+
+@media (max-width: 1024px) {
+       .input-group.inputs-conta {
+              height: 65vh;
+              overflow-y: scroll;
+              padding: 10px;
+              margin-bottom: 16px;
+       }
+
+       .criar-conta .button {
+              padding: 8px;
+              margin-top: -46px;
+       }
+}
+
+@media (max-width:768px) {
+
+       .container,
+       .form,
+       .form .criar-conta,
+       .form .entrar,
+       .form-img {
+              min-height: 95vh;
+       }
+
+       .input-generos {
+              flex-wrap: wrap;
+       }
+
+       .input-generos span {
+              margin-top: -8px;
+       }
+
+       .input-generos .genero {
+              margin: 24px 0;
+       }
+}
+
+@media (max-width: 475px) {
+       .form {
+              width: 100%;
+       }
+
+       .form-img {
+              display: none;
+       }
+}
+
+@media (max-width: 350px) {
+
+       .container,
+       .form,
+       .form .criar-conta,
+       .form .entrar {
+              min-height: 100vh;
+       }
+
+}
